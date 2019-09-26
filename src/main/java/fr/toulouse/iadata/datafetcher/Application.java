@@ -1,4 +1,4 @@
-package fr.toulouse.iadata.apifetcher;
+package fr.toulouse.iadata.datafetcher;
 
 import java.util.Properties;
 
@@ -10,9 +10,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 
-import fr.toulouse.iadata.apifetcher.config.SystemProperties;
-import fr.toulouse.iadata.apifetcher.services.IDataFetcherService;
-import fr.toulouse.iadata.apifetcher.services.KafkaService;
+import fr.toulouse.iadata.datafetcher.config.SystemProperties;
+import fr.toulouse.iadata.datafetcher.services.IDataFetcherService;
+import fr.toulouse.iadata.datafetcher.services.KafkaService;
 
 @EnableScheduling
 @SpringBootApplication

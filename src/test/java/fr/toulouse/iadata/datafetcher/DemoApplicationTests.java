@@ -1,4 +1,4 @@
-package fr.toulouse.iadata.apifetcher;
+package fr.toulouse.iadata.datafetcher;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

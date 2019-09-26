@@ -1,10 +1,10 @@
-package fr.toulouse.iadata.apifetcher.services;
+package fr.toulouse.iadata.datafetcher.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
-import fr.toulouse.iadata.apifetcher.config.KafkaProperties;
+import fr.toulouse.iadata.datafetcher.config.KafkaProperties;
 
 /**
  * Kafka service for producing datas to Kafkas topics

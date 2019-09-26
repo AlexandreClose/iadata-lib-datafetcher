@@ -1,4 +1,4 @@
-package fr.toulouse.iadata.apifetcher.config;
+package fr.toulouse.iadata.datafetcher.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;

@@ -1,4 +1,4 @@
-package fr.toulouse.iadata.apifetcher.services;
+package fr.toulouse.iadata.datafetcher.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.client.RestTemplateBuilder;
@@ -6,7 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import fr.toulouse.iadata.apifetcher.config.ApiFetcherProperties;
+import fr.toulouse.iadata.datafetcher.config.ApiFetcherProperties;
 
 /**
  * API fetcher service for fetching datas from configured API

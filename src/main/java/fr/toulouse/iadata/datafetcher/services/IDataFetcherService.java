@@ -1,4 +1,4 @@
-package fr.toulouse.iadata.apifetcher.services;
+package fr.toulouse.iadata.datafetcher.services;
 
 /**
  * Interface for data fetcher services
