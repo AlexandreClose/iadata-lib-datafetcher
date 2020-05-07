@@ -1,23 +1,21 @@
 package fr.toulouse.iadata.datafetcher.services;
 
+import fr.toulouse.iadata.datafetcher.config.ApiFetcherProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import fr.toulouse.iadata.datafetcher.config.ApiFetcherProperties;
-
 /**
  * API fetcher service for fetching datas from configured API
  */
-@Service
 public class ApiFetcherService implements IDataFetcherService
 {
     private final static String BASIC = "basic";
 
-    @Autowired
     private ApiFetcherProperties _apiFetcherProperties;
+
 
     /**
      * {@inheritDoc}
@@ -53,5 +51,11 @@ public class ApiFetcherService implements IDataFetcherService
         
         return response;
     }
+
+    public void setApiFetcherProperties ( ApiFetcherProperties properties )
+    {
+        _apiFetcherProperties = properties;
+    }
+
 
 }
