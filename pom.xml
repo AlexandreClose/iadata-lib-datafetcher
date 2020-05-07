@@ -9,10 +9,10 @@
 		<relativePath/>
 	</parent>
 	<groupId>fr.toulouse.iadata</groupId>
-	<artifactId>plugin-datafetcher</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>plugin-datafetcher</name>
-	<description>Plugin data fetcher for building microservices for fetching datas</description>
+	<artifactId>iadata-ms-datafetcher-kawantech</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<name>iadata-ms-datafetcher-kawantech</name>
+	<description>Microservice for fetching datas</description>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -20,12 +20,8 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.kafka</groupId>
-			<artifactId>spring-kafka</artifactId>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
 		</dependency>
 
 		<dependency>
@@ -40,11 +36,17 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.kafka</groupId>
-			<artifactId>spring-kafka-test</artifactId>
-			<scope>test</scope>
+			<groupId>fr.toulouse.iadata</groupId>
+			<artifactId>iadata-lib-datamodels</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
 		</dependency>
-	</dependencies>
+		<dependency>
+			<groupId>fr.toulouse.iadata</groupId>
+			<artifactId>iadata-lib-datafetcher</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+			<optional>true</optional>
+		</dependency>
+    </dependencies>
 
 	<build>
 		<plugins>

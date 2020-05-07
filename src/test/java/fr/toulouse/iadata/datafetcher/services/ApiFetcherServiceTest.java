@@ -8,8 +8,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import fr.toulouse.iadata.datafetcher.services.ApiFetcherService;
-
 import static org.junit.Assert.*;
 
 /**
