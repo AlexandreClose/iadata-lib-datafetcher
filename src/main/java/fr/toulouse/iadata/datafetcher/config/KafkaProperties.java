@@ -13,5 +13,7 @@ public class KafkaProperties
 {
     public String _strHost;
     public String _strPort;
-    public String _strTopic;
+    public String _strTopicParking;
+    public String _strTopicPedestrianCount;
+
 }

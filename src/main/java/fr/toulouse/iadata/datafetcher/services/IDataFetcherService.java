@@ -9,4 +9,5 @@ public interface IDataFetcherService
      * Process fetch datas
      */
     String fetch();
+    String fetchById(String id);
 }
