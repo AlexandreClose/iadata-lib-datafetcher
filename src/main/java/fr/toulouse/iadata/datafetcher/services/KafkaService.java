@@ -22,14 +22,11 @@ public class KafkaService
      * Send strMessage to Kafka configured topic
      * @param strMessage the message to send
      */
-    public void sendMessageToParkingTopic( String strMessage )
+    public void sendMessageToTopic( String strMessage )
     {
-        _kafkaTemplate.send( _kafkaProperties.getTopicParking( ), strMessage);
+        _kafkaTemplate.send( _kafkaProperties.getTopic( ), strMessage);
     }
-    public void sendMessageToPedestrianTopic( String strMessage )
-    {
-        _kafkaTemplate.send( _kafkaProperties.getTopicPedestrianCount( ), strMessage);
-    }
+
 
 
 }

@@ -9,11 +9,10 @@ import org.springframework.context.annotation.Configuration;
 @ConfigurationProperties(prefix = "kafka")
 @Data
 @Accessors( prefix = "_str")
-public class KafkaProperties 
+public abstract class KafkaProperties
 {
     public String _strHost;
     public String _strPort;
-    public String _strTopicParking;
-    public String _strTopicPedestrianCount;
+    public String _strTopic;
 
 }

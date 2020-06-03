@@ -27,21 +27,5 @@ public class JsonArraySplitterPrepareDatasService implements IPrepareDatasServic
 
     }
 
-    @Override
-    public List<String> getListId(String strData) {
 
-        List<String> identifierList = new ArrayList<>();
-        List<String> DataList = prepare(strData);
-        for (String json : DataList) {
-
-            try {
-                JsonNode jsonNode = new ObjectMapper().readTree(json);
-                identifierList.add(jsonNode.get("id").textValue());
-
-            } catch(IOException e){
-                e.printStackTrace();
-            }
-        }
-        return identifierList;
-    }
 }

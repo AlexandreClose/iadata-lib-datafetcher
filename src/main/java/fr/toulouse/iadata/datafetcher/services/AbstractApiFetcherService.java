@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * API fetcher service for fetching datas from configured API
  */
-public class ApiFetcherService implements IDataFetcherService
+public abstract class AbstractApiFetcherService implements IDataFetcherService
 {
     private final static String BASIC = "basic";
 
@@ -30,14 +30,7 @@ public class ApiFetcherService implements IDataFetcherService
         
         return response.getBody();
     }
-    @Override
-    public String fetchById(String id)
-    {
-        //Set the url to the api
-        ResponseEntity<String> response = getResponseEntityById(id);
 
-        return response.getBody();
-    }
 
 
     /**
@@ -60,25 +53,6 @@ public class ApiFetcherService implements IDataFetcherService
         //Set the url to the api
         ResponseEntity<String> response = restTemplate.getForEntity( _apiFetcherProperties.getUrlApi( ), String.class);
         
-        return response;
-    }
-
-    public ResponseEntity<String> getResponseEntityById( String id )
-    {
-        RestTemplate restTemplate = new RestTemplate();
-
-        //Add basic auth if API is basic auth secured
-        if ( _apiFetcherProperties.getSecurityType( ).equals( BASIC ) )
-        {
-            restTemplate = new RestTemplateBuilder( )
-                    .basicAuthentication( _apiFetcherProperties.getLoginApi(), _apiFetcherProperties.getPasswordApi() )
-                    .build();
-        }
-
-
-        //Set the url to the api
-        ResponseEntity<String> response = restTemplate.getForEntity( _apiFetcherProperties.getUrlApi( )+"/"+id+"/last", String.class);
-
         return response;
     }
 
