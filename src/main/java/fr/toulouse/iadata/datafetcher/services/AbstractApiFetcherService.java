@@ -1,6 +1,7 @@
 package fr.toulouse.iadata.datafetcher.services;
 
 import fr.toulouse.iadata.datafetcher.config.ApiFetcherProperties;
+import fr.toulouse.iadata.datafetcher.config.ProxyConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.ResponseEntity;
@@ -30,10 +31,13 @@ public abstract class AbstractApiFetcherService implements IDataFetcherService
     private final static String BASIC = "basic";
 
    @Autowired
-    private ApiFetcherProperties _apiFetcherProperties;
+   private ApiFetcherProperties _apiFetcherProperties;
+   
+   @Autowired
+   private ProxyConfig proxyConfig;
 
-//    @Autowired
-//    private ProxyCustomizer _proxyCustomizer;
+    @Autowired
+    private ProxyCustomizer proxyCustomizer;
 
     /**
      * {@inheritDoc}
@@ -62,7 +66,6 @@ public abstract class AbstractApiFetcherService implements IDataFetcherService
         //Add basic auth if API is basic auth secured
         if ( _apiFetcherProperties.getSecurityType( ).equals( BASIC ) )
         {
-            ProxyCustomizer proxyCustomizer = new ProxyCustomizer();
             proxyCustomizer.customize(restTemplate);
             restTemplate = new RestTemplateBuilder( )
             .basicAuthentication(_apiFetcherProperties.getLoginApi(), _apiFetcherProperties.getPasswordApi() ).customizers(proxyCustomizer)

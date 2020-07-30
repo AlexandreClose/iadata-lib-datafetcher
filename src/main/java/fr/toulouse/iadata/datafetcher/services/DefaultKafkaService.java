@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
  * Kafka service for producing datas to Kafkas topics
  */
 @Service
-public class KafkaService
+public class DefaultKafkaService implements IKafkaService< String >
 {
 
     @Autowired

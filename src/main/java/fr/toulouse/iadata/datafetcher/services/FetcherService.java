@@ -14,7 +14,7 @@ public class FetcherService {
     @Autowired
     private IDataFetcherService _dataFetcherService;
     @Autowired
-    private KafkaService _kafkaService;
+    private IKafkaService _kafkaService;
     @Autowired
     private IPrepareDatasService _prepareDatasService;
 
@@ -42,7 +42,7 @@ public class FetcherService {
         //Send to kafka
         for (String strData : listDatas) {
 
-                    _kafkaService.sendMessageToTopic(strData);
+            _kafkaService.sendMessageToTopic(strData);
 
         }
     }

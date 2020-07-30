@@ -1,0 +1,37 @@
+# disable embedded tomcat
+spring:
+    main:
+        web-environment: false
+
+# Choose the frequency on the HTTP call (default : every minute )
+dataFetcher:
+    pollingCronExpression: 0 * * * * ?
+
+# apifetcher properties
+apifetcher:
+    urlApi: https://api.kawantech.com/service
+    loginApi: jean-francois.carabin@mairie-toulouse.fr
+    passwordApi: wj]9hjX*s@
+    securityType: basic
+
+# kafka properties for sending out the datas
+kafka:
+    host: localhost
+    port: 9092
+
+
+proxy:
+    http:
+        proxyPort: 80
+        proxyHost: dsiproxymairie.mairie.toulouse.intra
+        proxyUser: cu33443
+        proxyPassword: Labulldoze-65    
+        
+#    https:
+#        proxyPort: 80
+#        proxyHost: dsiproxymairie.mairie.toulouse.intra
+#        proxyUser: cu33443
+#        proxyPassword: Labulldoze-65    
+            
+            
+     
